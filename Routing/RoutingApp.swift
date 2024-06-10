@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RoutingApp: App {
+    @StateObject var router: Router = DIContainer.shared.appRouter.resolve()
+
     var body: some Scene {
         WindowGroup {
-            DIContainer.shared.appContainerView.resolve()
+            AppNavigationNode(router: router)
+                .environmentObject(router)
         }
     }
 }

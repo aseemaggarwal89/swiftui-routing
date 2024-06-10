@@ -8,12 +8,11 @@
 import Foundation
 import SwiftUI
  
-enum Destination: Hashable {
+enum ChildViewType: Hashable {
     case home_1
     case registrationView_1
     case registrationView_2
 }
-
 
 enum RootViewType: Codable, Hashable {
     case login
@@ -31,7 +30,7 @@ class Router: ObservableObject {
         self.navPath = navPath
     }
     
-    func navigate(to destination: Destination) {
+    func navigate(to destination: ChildViewType) {
         navPath.append(destination)
     }
     
@@ -55,16 +54,8 @@ class Router: ObservableObject {
     }
 }
 
-struct AppContainerView: View {
-    var router: Router
-    var body: some View {
-        AppNavigationNode(router: router)
-            .environmentObject(router)
-    }
-}
-
 struct AppNavigationNode: View, Equatable {
-    @StateObject var router: Router
+    @ObservedObject var router: Router
     static func == (lhs: AppNavigationNode, rhs: AppNavigationNode) -> Bool {
         return lhs.router.rootType == rhs.router.rootType
     }
@@ -73,7 +64,7 @@ struct AppNavigationNode: View, Equatable {
     var body: some View {
         NavigationStack(path:$router.navPath) {
             RootView(rootType: router.rootType)
-            .navigationDestination(for: Destination.self) { route in
+            .navigationDestination(for: ChildViewType.self) { route in
                 DIContainer.shared.getViewFrom(node: route)
             }
         }
@@ -92,7 +83,9 @@ struct RootView: View, Equatable {
     }
 }
 
-enum ModalViewType: Hashable {
+
+
+enum ModalChildViewType: Hashable {
     case search
     case detail
 }
@@ -107,7 +100,7 @@ class ModalViewRouter: ObservableObject {
         self.rootType = rootType
     }
     
-    func navigate(to destination: ModalViewType) {
+    func navigate(to destination: ModalChildViewType) {
         navPath.append(destination)
     }
     
@@ -126,7 +119,7 @@ struct RootModalNode: View, Equatable {
     var body: some View {
         NavigationStack(path:$router.navPath) {
             DIContainer.shared.getRootViewFrom(root: router.rootType)
-            .navigationDestination(for: ModalViewType.self) { route in
+            .navigationDestination(for: ModalChildViewType.self) { route in
                 DIContainer.shared.getModalViewFrom(node: route)
             }
         }

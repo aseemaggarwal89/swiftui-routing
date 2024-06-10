@@ -12,13 +12,7 @@ import SwiftUI
 final class DIContainer: ObservableObject, SharedContainer {
     static let shared = DIContainer()
     var manager = ContainerManager()
-    
-    var appContainerView: Factory<AppContainerView> {
-        self { [unowned self] in
-            AppContainerView(router: appRouter())
-        }
-    }
-    
+        
     var appRouter: Factory<Router> {
         self {
             Router(navPath: NavigationPath())
@@ -43,8 +37,10 @@ final class DIContainer: ObservableObject, SharedContainer {
             HomeRootViewModel(router: appRouter())
         }
     }
-    
-    @ViewBuilder func getViewFrom(node: Destination) -> some View {
+}
+
+extension DIContainer {
+    @ViewBuilder func getViewFrom(node: ChildViewType) -> some View {
         switch node {
         case .home_1:
             HomeChildNode_1()
@@ -54,16 +50,7 @@ final class DIContainer: ObservableObject, SharedContainer {
             RegistrationFlow_2()
         }
     }
-    
-    @ViewBuilder func getModalViewFrom(node: ModalViewType) -> some View {
-        switch node {
-        case .search:
-            HomeChildNode_1()
-        case .detail:
-            HomeModalDetail()
-        }
-    }
-    
+        
     @ViewBuilder func getRootViewFrom(root: RootViewType) -> some View {
         switch root {
         case .login:
@@ -74,6 +61,15 @@ final class DIContainer: ObservableObject, SharedContainer {
             HomeRootView(viewModel: homeViewModel())
         case .homeModal:
             HomeModalRoot()
+        }
+    }
+
+    @ViewBuilder func getModalViewFrom(node: ModalChildViewType) -> some View {
+        switch node {
+        case .search:
+            HomeChildNode_1()
+        case .detail:
+            HomeModalDetail()
         }
     }
 }

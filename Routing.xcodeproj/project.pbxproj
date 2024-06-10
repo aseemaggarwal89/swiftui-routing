@@ -22,7 +22,6 @@
 		EB652A462C169E400079CF23 /* HomeModalRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB652A452C169E400079CF23 /* HomeModalRoot.swift */; };
 		EB652A482C169E9E0079CF23 /* HomeModalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB652A472C169E9E0079CF23 /* HomeModalDetail.swift */; };
 		EBE547862C0FE2F90003E207 /* RoutingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE547852C0FE2F90003E207 /* RoutingApp.swift */; };
-		EBE547882C0FE2F90003E207 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE547872C0FE2F90003E207 /* ContentView.swift */; };
 		EBE5478A2C0FE2FB0003E207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE547892C0FE2FB0003E207 /* Assets.xcassets */; };
 		EBE5478E2C0FE2FB0003E207 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE5478D2C0FE2FB0003E207 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -43,7 +42,6 @@
 		EB652A472C169E9E0079CF23 /* HomeModalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalDetail.swift; sourceTree = "<group>"; };
 		EBE547822C0FE2F90003E207 /* Routing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE547852C0FE2F90003E207 /* RoutingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingApp.swift; sourceTree = "<group>"; };
-		EBE547872C0FE2F90003E207 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EBE547892C0FE2FB0003E207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBE5478B2C0FE2FB0003E207 /* Routing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Routing.entitlements; sourceTree = "<group>"; };
 		EBE5478D2C0FE2FB0003E207 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				EB652A292C1592550079CF23 /* Login */,
 				EB652A282C15924F0079CF23 /* Home */,
 				EBE547852C0FE2F90003E207 /* RoutingApp.swift */,
-				EBE547872C0FE2F90003E207 /* ContentView.swift */,
 				EBE547892C0FE2FB0003E207 /* Assets.xcassets */,
 				EBE5478B2C0FE2FB0003E207 /* Routing.entitlements */,
 				EBE5478C2C0FE2FB0003E207 /* Preview Content */,
@@ -227,7 +224,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB652A372C1594E40079CF23 /* DIContainer.swift in Sources */,
-				EBE547882C0FE2F90003E207 /* ContentView.swift in Sources */,
 				EB652A442C15E8EB0079CF23 /* HomeRootViewModel.swift in Sources */,
 				EB652A272C13F86F0079CF23 /* Router.swift in Sources */,
 				EB652A392C1596990079CF23 /* HomeChildNode_1.swift in Sources */,
