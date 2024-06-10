@@ -19,6 +19,8 @@
 		EB652A3F2C159F9F0079CF23 /* RegistrationFlow_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB652A3E2C159F9F0079CF23 /* RegistrationFlow_2.swift */; };
 		EB652A412C15A13A0079CF23 /* RegistrationRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB652A402C15A13A0079CF23 /* RegistrationRootViewModel.swift */; };
 		EB652A442C15E8EB0079CF23 /* HomeRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB652A432C15E8EA0079CF23 /* HomeRootViewModel.swift */; };
+		EB652A462C169E400079CF23 /* HomeModalRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB652A452C169E400079CF23 /* HomeModalRoot.swift */; };
+		EB652A482C169E9E0079CF23 /* HomeModalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB652A472C169E9E0079CF23 /* HomeModalDetail.swift */; };
 		EBE547862C0FE2F90003E207 /* RoutingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE547852C0FE2F90003E207 /* RoutingApp.swift */; };
 		EBE547882C0FE2F90003E207 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE547872C0FE2F90003E207 /* ContentView.swift */; };
 		EBE5478A2C0FE2FB0003E207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE547892C0FE2FB0003E207 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		EB652A3E2C159F9F0079CF23 /* RegistrationFlow_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlow_2.swift; sourceTree = "<group>"; };
 		EB652A402C15A13A0079CF23 /* RegistrationRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRootViewModel.swift; sourceTree = "<group>"; };
 		EB652A432C15E8EA0079CF23 /* HomeRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootViewModel.swift; sourceTree = "<group>"; };
+		EB652A452C169E400079CF23 /* HomeModalRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalRoot.swift; sourceTree = "<group>"; };
+		EB652A472C169E9E0079CF23 /* HomeModalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalDetail.swift; sourceTree = "<group>"; };
 		EBE547822C0FE2F90003E207 /* Routing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE547852C0FE2F90003E207 /* RoutingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingApp.swift; sourceTree = "<group>"; };
 		EBE547872C0FE2F90003E207 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				EB652A2B2C1592710079CF23 /* HomeRootView.swift */,
 				EB652A432C15E8EA0079CF23 /* HomeRootViewModel.swift */,
 				EB652A382C1596990079CF23 /* HomeChildNode_1.swift */,
+				EB652A452C169E400079CF23 /* HomeModalRoot.swift */,
+				EB652A472C169E9E0079CF23 /* HomeModalDetail.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 				EB652A272C13F86F0079CF23 /* Router.swift in Sources */,
 				EB652A392C1596990079CF23 /* HomeChildNode_1.swift in Sources */,
 				EB652A3F2C159F9F0079CF23 /* RegistrationFlow_2.swift in Sources */,
+				EB652A482C169E9E0079CF23 /* HomeModalDetail.swift in Sources */,
+				EB652A462C169E400079CF23 /* HomeModalRoot.swift in Sources */,
 				EB652A412C15A13A0079CF23 /* RegistrationRootViewModel.swift in Sources */,
 				EB652A2E2C1592AE0079CF23 /* LoginRoot.swift in Sources */,
 				EB652A302C1592CE0079CF23 /* RegistrationRootView.swift in Sources */,

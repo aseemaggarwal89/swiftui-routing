@@ -55,6 +55,15 @@ final class DIContainer: ObservableObject, SharedContainer {
         }
     }
     
+    @ViewBuilder func getModalViewFrom(node: ModalViewType) -> some View {
+        switch node {
+        case .search:
+            HomeChildNode_1()
+        case .detail:
+            HomeModalDetail()
+        }
+    }
+    
     @ViewBuilder func getRootViewFrom(root: RootViewType) -> some View {
         switch root {
         case .login:
@@ -63,6 +72,8 @@ final class DIContainer: ObservableObject, SharedContainer {
             RegistrationRoot(viewModel: registrationViewModel())
         case .home:
             HomeRootView(viewModel: homeViewModel())
+        case .homeModal:
+            HomeModalRoot()
         }
     }
 }

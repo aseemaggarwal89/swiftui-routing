@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeRootView: View {
-    let viewModel: HomeRootViewModel
+    @ObservedObject var viewModel: HomeRootViewModel
+    @StateObject var modalRouter: ModalViewRouter = ModalViewRouter(rootType: .homeModal)
     
     init(viewModel: HomeRootViewModel) {
         self.viewModel = viewModel
@@ -18,11 +19,21 @@ struct HomeRootView: View {
         VStack {
             Text("Home Root View")
             Button {
+                viewModel.openModalWorkflow()
+            } label: {
+                Text("Modal Workflow")
+            }
+            
+            Button {
                 viewModel.tappedOnNext()
             } label: {
                 Text("Next")
             }
-        }.environmentObject(viewModel.router)
+        }
+        .sheet(isPresented: $viewModel.openSheet) {
+            RootModalNode(router: modalRouter)
+        }
+        .environmentObject(viewModel.router)
     }
 }
 

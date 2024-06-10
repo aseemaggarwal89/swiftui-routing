@@ -8,6 +8,7 @@
 import Foundation
 
 class HomeRootViewModel: ObservableObject {
+    @Published var openSheet: Bool = false
     let router: Router
     
     init(router: Router) {
@@ -16,6 +17,10 @@ class HomeRootViewModel: ObservableObject {
     
     func tappedOnNext() {
         router.navigate(to: .home_1)
+    }
+    
+    func openModalWorkflow() {
+        openSheet = true
     }
 }
 

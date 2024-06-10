@@ -19,6 +19,7 @@ enum RootViewType: Codable, Hashable {
     case login
     case registrationView
     case home
+    case homeModal
 }
 
 class Router: ObservableObject {
@@ -88,13 +89,47 @@ struct RootView: View, Equatable {
     
     var body: some View {
         DIContainer.shared.getRootViewFrom(root: rootType)
-//        switch rootType {
-//        case .login:
-//            LoginRoot(viewModel: DIContainer.shared.loginViewModel.resolve())
-//        case .registrationView:
-//            RegistrationRoot()
-//        case .home:
-//            HomeRootView()
-//        }
+    }
+}
+
+enum ModalViewType: Hashable {
+    case search
+    case detail
+}
+
+class ModalViewRouter: ObservableObject {
+    let id = UUID()
+    @Published var navPath: NavigationPath
+    @Published var rootType: RootViewType
+    
+    init(navPath: NavigationPath = NavigationPath(), rootType: RootViewType) {
+        self.navPath = navPath
+        self.rootType = rootType
+    }
+    
+    func navigate(to destination: ModalViewType) {
+        navPath.append(destination)
+    }
+    
+    func navigateBack() {
+        navPath.removeLast()
+    }
+}
+
+struct RootModalNode: View, Equatable {
+    @ObservedObject var router: ModalViewRouter
+    static func == (lhs: RootModalNode, rhs: RootModalNode) -> Bool {
+        return lhs.router.rootType == rhs.router.rootType
+    }
+
+    @ViewBuilder
+    var body: some View {
+        NavigationStack(path:$router.navPath) {
+            DIContainer.shared.getRootViewFrom(root: router.rootType)
+            .navigationDestination(for: ModalViewType.self) { route in
+                DIContainer.shared.getModalViewFrom(node: route)
+            }
+        }
+        .environmentObject(router)
     }
 }
